@@ -1,437 +1,371 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050816">
+    <meta name="description" content="Korepetycje z matematyki online dla szkoły podstawowej, liceum i matury podstawowej. Spokojne tłumaczenie krok po kroku.">
+    <meta name="robots" content="index, follow">
 
-    <title>Numeriq — Korepetycje z matematyki online</title>
+    <title>Numeriq — korepetycje z matematyki online</title>
+    <link rel="canonical" href="https://numeriqmath.pl/">
 
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="Numeriq">
+    <meta property="og:title" content="Numeriq — korepetycje z matematyki online">
+    <meta property="og:description" content="Matematyka bez stresu i chaosu. Indywidualne zajęcia online dla szkoły podstawowej, liceum i matury podstawowej.">
+    <meta property="og:url" content="https://numeriqmath.pl/">
+    <meta property="og:image" content="https://numeriqmath.pl/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Numeriq",
+      "url": "https://numeriqmath.pl/",
+      "description": "Korepetycje z matematyki online dla szkoły podstawowej, liceum i matury podstawowej",
+      "inLanguage": "pl-PL"
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
 
-    <section class="hero">
-        
-    <nav class="navbar">
-        <div class="logo">Numeriq</div>
+    <header class="site-header" id="top">
+        <div class="container nav-wrap">
+            <a class="logo" href="#top" aria-label="Numeriq — strona główna">
+                <span class="logo-mark" aria-hidden="true">N</span>
+                <span>Numeriq</span>
+            </a>
 
-        <a href="#kontakt" class="nav-button">
-            Kontakt
-        </a>
-    </nav>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otwórz menu">
+                <span></span><span></span><span></span>
+            </button>
 
-    <div class="hero-wrapper">
+            <nav class="main-nav" id="main-nav" aria-label="Główna nawigacja">
+                <a href="#oferta">Oferta</a>
+                <a href="#o-mnie">O mnie</a>
+                <a href="#zajecia">Jak wyglądają zajęcia</a>
+                <a href="#faq">FAQ</a>
+            </nav>
 
-        <div class="hero-content">
-
-            <p class="hero-tag">
-                Korepetycje z matematyki
-            </p>
-
-            <h1>
-                Bez stresu. <br>
-                Bez chaosu. <br>
-                Krok po kroku.
-            </h1>
-
-            <p class="hero-description">
-                Korepetycje online dla szkoły podstawowej i liceum.
-                Spokojne tłumaczenie, przygotowanie do sprawdzianów
-                i pomoc krok po kroku.
-            </p>
-            <div class="hero-buttons">
-
-                <a href="#kontakt" class="primary-button">
-                    Umów pierwsze zajęcia
-                </a>
-
-                <a href="#oferta" class="secondary-button">
-                    Zobacz ofertę
-                </a>
-
-            </div>
-
-            <div class="hero-info">
-
-                <span>✔ Online</span>
-
-                <span>✔ Spokojne tłumaczenie</span>
-
-                <span>✔ Matura podstawowa</span>
-
-            </div>
+            <a href="#kontakt" class="nav-button">Umów zajęcia</a>
         </div>
+    </header>
 
-        <div class="hero-image">
+    <main id="main">
+        <section class="hero">
+            <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
 
-            <svg class="math-illustration"
-     viewBox="0 0 600 600"
-     fill="none"
-     xmlns="http://www.w3.org/2000/svg">
+            <div class="container hero-wrapper">
+                <div class="hero-content reveal">
+                    <p class="eyebrow">Korepetycje z matematyki online</p>
+                    <h1>Bez stresu.<br>Bez chaosu.<br><span>Krok po kroku.</span></h1>
+                    <p class="hero-description">
+                        Indywidualne zajęcia dla szkoły podstawowej i liceum. Pomagam zrozumieć materiał,
+                        przygotować się do sprawdzianów oraz matury podstawowej.
+                    </p>
 
-    <!-- GRID -->
+                    <div class="hero-buttons">
+                        <a href="#kontakt" class="button button-primary">Umów pierwsze zajęcia</a>
+                        <a href="#oferta" class="button button-secondary">Zobacz ofertę</a>
+                    </div>
 
-    <g opacity="0.15">
-
-        <line x1="0" y1="100" x2="600" y2="100"/>
-        <line x1="0" y1="200" x2="600" y2="200"/>
-        <line x1="0" y1="300" x2="600" y2="300"/>
-        <line x1="0" y1="400" x2="600" y2="400"/>
-        <line x1="0" y1="500" x2="600" y2="500"/>
-
-        <line x1="100" y1="0" x2="100" y2="600"/>
-        <line x1="200" y1="0" x2="200" y2="600"/>
-        <line x1="300" y1="0" x2="300" y2="600"/>
-        <line x1="400" y1="0" x2="400" y2="600"/>
-        <line x1="500" y1="0" x2="500" y2="600"/>
-
-    </g>
-
-    <!-- AXES -->
-
-    <line x1="80" y1="520" x2="520" y2="520"
-          stroke="#60A5FA"
-          stroke-width="3"/>
-
-    <line x1="80" y1="520" x2="80" y2="80"
-          stroke="#60A5FA"
-          stroke-width="3"/>
-
-    <!-- CURVE -->
-
-    <path d="M80 450
-             C180 430,
-             220 320,
-             300 350
-
-             C380 380,
-             420 180,
-             520 120"
-
-          stroke="#3B82F6"
-          stroke-width="6"
-          stroke-linecap="round"
-          filter="url(#glow)"/>
-
-    <!-- POINTS -->
-
-    <circle cx="300" cy="350" r="10" fill="#60A5FA"/>
-    <circle cx="520" cy="120" r="10" fill="#60A5FA"/>
-
-    <!-- LABELS -->
-
-    <text x="530" y="535"
-          fill="#94A3B8"
-          font-size="20">
-        x
-    </text>
-
-    <text x="60" y="70"
-          fill="#94A3B8"
-          font-size="20">
-        y
-    </text>
-
-    <!-- GLOW -->
-
-    <defs>
-
-        <filter id="glow">
-
-            <feGaussianBlur stdDeviation="4"
-                            result="coloredBlur"/>
-
-            <feMerge>
-
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-
-            </feMerge>
-
-        </filter>
-
-    </defs>
-
-</svg>
-
-        </div>
-
-    </div>
-
-</section>
-    <section class="offer" id="oferta">
-
-        <div class="section-header">
-
-            <p class="section-tag">
-                Oferta
-            </p>
-
-            <h2>
-                W czym pomagam
-            </h2>
-
-        </div>
-
-        <div class="offer-grid">
-
-            <div class="offer-card">
-                <h3>Szkoła podstawowa</h3>
-
-                <p>
-                    Pomoc z bieżącym materiałem, kartkówkami,
-                    sprawdzianami i nadrabianiem zaległości.
-                </p>
-                <div class="offer-price">
-                    70 zł / 60 min
+                    <ul class="hero-info" aria-label="Najważniejsze informacje">
+                        <li><span>✓</span> Zajęcia online</li>
+                        <li><span>✓</span> Indywidualne tempo</li>
+                        <li><span>✓</span> Matura podstawowa</li>
+                    </ul>
                 </div>
 
-                <div class="offer-price-secondary">
-                    100 zł / 90 min
+                <div class="hero-visual reveal" aria-label="Ilustracja wykresu funkcji">
+                    <div class="visual-card">
+                        <div class="visual-label">Zrozumienie zamiast zapamiętywania</div>
+                        <svg class="math-illustration" viewBox="0 0 600 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart-title chart-desc">
+                            <title id="chart-title">Rosnący wykres funkcji</title>
+                            <desc id="chart-desc">Dekoracyjna ilustracja symbolizująca postępy w nauce matematyki.</desc>
+                            <g opacity="0.12" stroke="#fff">
+                                <path d="M40 80H560M40 160H560M40 240H560M40 320H560M40 400H560"/>
+                                <path d="M120 40V460M200 40V460M280 40V460M360 40V460M440 40V460M520 40V460"/>
+                            </g>
+                            <path d="M65 430H550" stroke="#60A5FA" stroke-width="3"/>
+                            <path d="M65 430V52" stroke="#60A5FA" stroke-width="3"/>
+                            <path d="M65 380C145 370 170 300 230 312C310 329 330 230 395 245C455 259 488 130 548 86" stroke="url(#curve)" stroke-width="8" stroke-linecap="round"/>
+                            <circle cx="230" cy="312" r="10" fill="#93C5FD"/>
+                            <circle cx="395" cy="245" r="10" fill="#93C5FD"/>
+                            <circle cx="548" cy="86" r="12" fill="#60A5FA"/>
+                            <defs><linearGradient id="curve" x1="65" y1="380" x2="548" y2="86" gradientUnits="userSpaceOnUse"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#7DD3FC"/></linearGradient></defs>
+                        </svg>
+                        <div class="visual-stat">
+                            <strong>Małe kroki</strong>
+                            <span>regularnie prowadzą do dużego postępu</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="offer-card">
-                <h3>Liceum</h3>
+        <section class="trust-strip" aria-label="Informacje o zajęciach">
+            <div class="container trust-grid">
+                <div><strong>1:1</strong><span>indywidualne zajęcia</span></div>
+                <div><strong>60 lub 90 min</strong><span>długość spotkania</span></div>
+                <div><strong>Online</strong><span>bez dojazdów</span></div>
+            </div>
+        </section>
 
-                <p>
-                    Matematyka krok po kroku — od podstaw
-                    po trudniejsze zagadnienia.
-                </p>
-                 <div class="offer-price">
-                    70 zł / 60 min
+        <section class="section offer" id="oferta">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="eyebrow">Oferta</p>
+                    <h2>W czym mogę Ci pomóc?</h2>
+                    <p>Zakres zajęć dopasowujemy do aktualnych potrzeb, zaległości i celu ucznia.</p>
                 </div>
 
-                <div class="offer-price-secondary">
-                    100 zł / 90 min
+                <div class="offer-grid">
+                    <article class="offer-card reveal">
+                        <span class="card-number">01</span>
+                        <h3>Szkoła podstawowa</h3>
+                        <p>Bieżący materiał, kartkówki, sprawdziany, egzamin ósmoklasisty i nadrabianie zaległości.</p>
+                        <div class="price"><strong>70 zł</strong><span>/ 60 min</span></div>
+                        <div class="price-secondary">100 zł / 90 min</div>
+                        <a href="#kontakt">Zapytaj o termin →</a>
+                    </article>
+
+                    <article class="offer-card featured reveal">
+                        <span class="card-badge">Najczęściej wybierane</span>
+                        <span class="card-number">02</span>
+                        <h3>Liceum</h3>
+                        <p>Matematyka krok po kroku — od uporządkowania podstaw po trudniejsze zagadnienia.</p>
+                        <div class="price"><strong>70 zł</strong><span>/ 60 min</span></div>
+                        <div class="price-secondary">100 zł / 90 min</div>
+                        <a href="#kontakt">Zapytaj o termin →</a>
+                    </article>
+
+                    <article class="offer-card reveal">
+                        <span class="card-number">03</span>
+                        <h3>Matura podstawowa</h3>
+                        <p>Arkusze, powtarzające się schematy zadań, strategie rozwiązywania i plan powtórek.</p>
+                        <div class="price"><strong>70 zł</strong><span>/ 60 min</span></div>
+                        <div class="price-secondary">100 zł / 90 min</div>
+                        <a href="#kontakt">Zapytaj o termin →</a>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div class="offer-card">
-                <h3>Matura podstawowa</h3>
-
-                <p>
-                    Przygotowanie do matury, arkusze,
-                    schematy zadań i strategie rozwiązywania.
-                </p>
-                 <div class="offer-price">
-                    70 zł / 60 min
+        <section class="section about" id="o-mnie">
+            <div class="container about-grid">
+                <div class="about-photo reveal">
+                    <div class="photo-frame">
+                        <picture>
+                            <source srcset="image.webp" type="image/webp">
+                            <img src="image.jpg" alt="Korepetytor Numeriq" width="900" height="1200" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="photo-note"><span>✓</span> Spokojna atmosfera bez oceniania</div>
                 </div>
 
-                <div class="offer-price-secondary">
-                    100 zł / 90 min
+                <div class="about-copy reveal">
+                    <p class="eyebrow">O mnie</p>
+                    <h2>Korepetycje prowadzone spokojnie i konkretnie.</h2>
+                    <p>
+                        Cześć! Studiuję Automatykę i Robotykę oraz prowadzę korepetycje z matematyki online
+                        dla uczniów szkoły podstawowej i liceum.
+                    </p>
+                    <p>
+                        Zależy mi, żeby uczeń naprawdę zrozumiał temat. Dlatego tłumaczę od podstaw,
+                        pokazuję tok rozumowania i dopiero później przechodzimy do samodzielnych zadań.
+                    </p>
+                    <ul class="check-list">
+                        <li><span>✓</span> Tłumaczenie dopasowane do poziomu ucznia</li>
+                        <li><span>✓</span> Wspólne rozwiązywanie na interaktywnej tablicy</li>
+                        <li><span>✓</span> Zadania dobrane pod konkretny sprawdzian lub egzamin</li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
-        </div>
-
-    </section>
-<section class="about">
-
-    <div class="section-header">
-
-        <p class="section-tag">
-            O mnie
-        </p>
-
-        <h2>
-            Korepetycje prowadzone spokojnie i konkretnie
-        </h2>
-
-    </div>
-
-    <div class="about-box">
-
-        <div class="about-text">
-
-            <p>
-                Cześć, jestem studentem Automatyki i Robotyki
-                i prowadzę korepetycje z matematyki online
-                dla szkoły podstawowej oraz liceum.
-            </p>
-
-            <p>
-                Na zajęciach skupiam się przede wszystkim
-                na zrozumieniu materiału krok po kroku —
-                bez stresu, chaosu i uczenia się na pamięć.
-            </p>
-
-            <p>
-                Pomagam w przygotowaniu do sprawdzianów,
-                kartkówek oraz matury podstawowej.
-            </p>
-
-        </div>
-
-        <img src="image.jpg"
-            alt="Zdjęcie korepetytora"
-            class="about-image">
-
-    </div>
-
-
-</section>
-    <section class="process">
-
-        <div class="section-header">
-
-            <p class="section-tag">
-                Jak wyglądają zajęcia
-            </p>
-
-            <h2>
-                Prosto i skutecznie
-            </h2>
-
-        </div>
-
-        <div class="process-grid">
-
-            <div class="process-card">
-                <span>01</span>
-
-                <h3>Spokojne tłumaczenie</h3>
-
-                <p>
-                    Tłumaczę krok po kroku bez presji
-                    i przeskakiwania między tematami.
-                </p>
-            </div>
-
-            <div class="process-card">
-                <span>02</span>
-
-                <h3>Wspólne rozwiązywanie</h3>
-
-                <p>
-                    Nie tylko pokazuję rozwiązania —
-                    uczymy się myślenia i schematów.
-                </p>
-            </div>
-
-            <div class="process-card">
-                <span>03</span>
-
-                <h3>Przygotowanie do sprawdzianów</h3>
-
-                <p>
-                    Skupiamy się na zadaniach,
-                    które realnie pojawiają się w szkole.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-    <section class="reviews">
-
-        <div class="section-header">
-
-            <p class="section-tag">
-                Opinie
-            </p>
-
-            <h2>
-                Co mówią uczniowie
-            </h2>
-
-        </div>
-
-        <div class="reviews-grid">
-
-            <div class="review-card">
-
-                <p class="review-text">
-                    „W końcu zacząłem rozumieć matematykę,
-                    a nie tylko uczyć się schematów.”
-                </p>
-
-                <div class="review-author">
-                    — Kuba, liceum
+        <section class="section process" id="zajecia">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="eyebrow">Jak wyglądają zajęcia</p>
+                    <h2>Prosty proces, bez zgadywania.</h2>
+                    <p>Od pierwszej wiadomości wiemy, nad czym pracujemy i jaki jest cel spotkania.</p>
                 </div>
 
+                <div class="process-grid">
+                    <article class="process-card reveal">
+                        <span class="step">01</span>
+                        <h3>Krótka wiadomość</h3>
+                        <p>Opisujesz poziom, temat i termin. Ustalamy, czy oraz kiedy mogę pomóc.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <span class="step">02</span>
+                        <h3>Zajęcia online</h3>
+                        <p>Spotykamy się online, korzystając z udostępnionego ekranu i wspólnej tablicy.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <span class="step">03</span>
+                        <h3>Utrwalenie materiału</h3>
+                        <p>Na koniec podsumowujemy temat i ustalamy, co warto jeszcze przećwiczyć.</p>
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <div class="review-card">
+        <section class="section benefits">
+            <div class="container benefits-grid">
+                <div class="benefits-copy reveal">
+                    <p class="eyebrow">Dlaczego taka forma działa</p>
+                    <h2>Najpierw rozumienie, później szybkość.</h2>
+                    <p>
+                        Celem nie jest bezmyślne zapamiętanie rozwiązania. Budujemy podstawy,
+                        rozpoznajemy typ zadania i ćwiczymy samodzielne dojście do wyniku.
+                    </p>
+                </div>
+                <div class="benefit-list reveal">
+                    <div><span>01</span><strong>Możesz zadawać pytania bez presji</strong></div>
+                    <div><span>02</span><strong>Tempo jest dopasowane do Ciebie</strong></div>
+                    <div><span>03</span><strong>Ćwiczymy dokładnie to, czego potrzebujesz</strong></div>
+                </div>
+            </div>
+        </section>
 
-                <p class="review-text">
-                    „Bardzo spokojne tłumaczenie i dużo cierpliwości.
-                    Przed sprawdzianem wszystko było jasne.”
-                </p>
+        <section class="section faq" id="faq">
+            <div class="container faq-grid">
+                <div class="faq-heading reveal">
+                    <p class="eyebrow">FAQ</p>
+                    <h2>Najczęstsze pytania</h2>
+                    <p>Nie widzisz odpowiedzi? Napisz przez formularz — opisz krótko swoją sytuację.</p>
+                </div>
+                <div class="accordion reveal">
+                    <details open>
+                        <summary>Gdzie odbywają się zajęcia?</summary>
+                        <p>Zajęcia odbywają się online. Potrzebujesz komputera lub tabletu, internetu oraz możliwości rozmowy głosowej.</p>
+                    </details>
+                    <details>
+                        <summary>Czy przygotowujesz do matury rozszerzonej?</summary>
+                        <p>Aktualna oferta obejmuje maturę podstawową. W formularzu możesz opisać temat, a odpowiem, czy mogę pomóc.</p>
+                    </details>
+                    <details>
+                        <summary>Jak wygląda płatność?</summary>
+                        <p>Szczegóły płatności i termin ustalamy przed pierwszym spotkaniem.</p>
+                    </details>
+                    <details>
+                        <summary>Czy można umówić pojedyncze zajęcia?</summary>
+                        <p>Tak. Możemy zacząć od jednego spotkania i później zdecydować, czy potrzebne są kolejne.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
 
-                <div class="review-author">
-                    — Maja, 8 klasa
+        <section class="section contact" id="kontakt">
+            <div class="container contact-grid">
+                <div class="contact-copy reveal">
+                    <p class="eyebrow light">Kontakt</p>
+                    <h2>Napisz, z czym potrzebujesz pomocy.</h2>
+                    <p>
+                        Podaj poziom, temat oraz dogodny termin. Odpowiem tak szybko, jak będzie to możliwe,
+                        i ustalimy szczegóły pierwszych zajęć.
+                    </p>
+                    <div class="contact-tip">
+                        <span>i</span>
+                        <p>Nie wpisuj do formularza danych wrażliwych ani szczegółowych informacji o zdrowiu.</p>
+                    </div>
                 </div>
 
+                <form class="contact-form reveal" id="contact-form" action="contact.php" method="post" novalidate>
+                    <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+
+                    <input type="hidden" name="csrf_token" id="csrf-token" value="">
+                    <input type="hidden" name="started_at" id="started-at" value="">
+
+                    <div class="honeypot" aria-hidden="true">
+                        <label>Firma <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Imię <span aria-hidden="true">*</span>
+                            <input type="text" name="name" autocomplete="name" maxlength="80" required>
+                        </label>
+                        <label>
+                            Adres e-mail <span aria-hidden="true">*</span>
+                            <input type="email" name="email" autocomplete="email" maxlength="160" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Telefon <small>(opcjonalnie)</small>
+                            <input type="tel" name="phone" autocomplete="tel" maxlength="30" inputmode="tel">
+                        </label>
+                        <label>
+                            Poziom <span aria-hidden="true">*</span>
+                            <select name="level" required>
+                                <option value="">Wybierz poziom</option>
+                                <option value="Szkoła podstawowa">Szkoła podstawowa</option>
+                                <option value="Liceum / technikum">Liceum / technikum</option>
+                                <option value="Matura podstawowa">Matura podstawowa</option>
+                                <option value="Inny">Inny</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        Temat lub cel zajęć <span aria-hidden="true">*</span>
+                        <input type="text" name="topic" maxlength="160" placeholder="np. funkcje, sprawdzian, matura" required>
+                    </label>
+
+                    <label>
+                        Wiadomość <span aria-hidden="true">*</span>
+                        <textarea name="message" rows="6" minlength="10" maxlength="3000" placeholder="Napisz, z czym jest problem i jaki termin Ci odpowiada." required></textarea>
+                    </label>
+
+                    <label class="consent-row">
+                        <input type="checkbox" name="privacy_ack" value="1" required>
+                        <span>Zapoznałem/am się z <a href="polityka-prywatnosci.php" target="_blank" rel="noopener">polityką prywatności</a>. <span aria-hidden="true">*</span></span>
+                    </label>
+
+                    <button class="button button-primary submit-button" type="submit">
+                        <span class="button-text">Wyślij wiadomość</span>
+                        <span class="button-loader" aria-hidden="true"></span>
+                    </button>
+                    <p class="form-footnote">Pola oznaczone * są wymagane. Formularz jest zabezpieczony przed prostym spamem.</p>
+                </form>
             </div>
+        </section>
+    </main>
 
-            <div class="review-card">
-
-                <p class="review-text">
-                    „Świetna atmosfera na zajęciach
-                    i konkretne przygotowanie do matury.”
-                </p>
-
-                <div class="review-author">
-                    — maturzysta
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    <section class="contact" id="kontakt">
-
-        <div class="contact-content">
-
-            <p class="section-tag">
-                Kontakt
-            </p>
-
-            <h2>
-                Chcesz umówić zajęcia?
-            </h2>
-
-            <p class="contact-description">
-                Napisz wiadomość i ustalimy dogodny termin
-                oraz zakres materiału.
-            </p>
-
-           <div class="contact-buttons">
-
-                <a href="https://m.me/TWOJPROFIL"
-                target="_blank"
-                class="primary-button">
-
-                    Napisz na Facebooku
-
-                </a>
-
-            </div>
-
-            <p class="contact-note">
-                Pierwsza wiadomość nic nie kosztuje —
-                możesz po prostu zapytać o terminy lub materiał.
-            </p>
-
-        </div>
-
-    </section>
     <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="logo footer-logo" href="#top"><span class="logo-mark" aria-hidden="true">N</span><span>Numeriq</span></a>
+                <p>Korepetycje z matematyki online.</p>
+            </div>
+            <nav aria-label="Linki w stopce">
+                <a href="#oferta">Oferta</a>
+                <a href="#o-mnie">O mnie</a>
+                <a href="#kontakt">Kontakt</a>
+                <a href="polityka-prywatnosci.php">Polityka prywatności</a>
+            </nav>
+            <p class="copyright">© <span id="year">2026</span> Numeriq</p>
+        </div>
+    </footer>
 
-    <p>
-    © 2026 Numeriq — Korepetycje z matematyki online
-    </p>
-
-    <p class="footer-subtext">
-        Zajęcia online • Indywidualne podejście
-    </p>
-</footer>
+    <script src="script.js" defer></script>
 </body>
 </html>

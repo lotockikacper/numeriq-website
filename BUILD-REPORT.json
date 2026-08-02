@@ -1,0 +1,26 @@
+{
+  "files": [
+    ".gitignore",
+    ".htaccess",
+    "DEPLOY-OVH.md",
+    "README.md",
+    "apple-touch-icon.png",
+    "config.example.php",
+    "contact.php",
+    "favicon-32.png",
+    "favicon.svg",
+    "image.jpg",
+    "image.webp",
+    "index.html",
+    "og-image.png",
+    "polityka-prywatnosci.php",
+    "robots.txt",
+    "script.js",
+    "sitemap.xml",
+    "style.css"
+  ],
+  "privacy_uses_config": true,
+  "form_endpoint": true,
+  "config_ignored": true,
+  "fake_reviews_removed": true
+}
