@@ -1,86 +1,69 @@
-# Numeriq — wersja gotowa do wdrożenia
+# Numeriq — wersja Formspree / GitHub Pages
 
-Responsywna strona korepetycji z działającym formularzem PHP przygotowanym pod zwykły hosting WWW.
+Ta wersja działa jako zwykła strona statyczna na GitHub Pages.
+
+Formularz jest podłączony do:
+
+```text
+https://formspree.io/f/xaqrreqn
+```
+
+Nie są potrzebne:
+
+- hosting PHP,
+- `contact.php`,
+- `config.php`,
+- FTP do OVH,
+- własny backend.
+
+## Publikacja
+
+Podmień pliki w repozytorium plikami z tej paczki, a następnie:
+
+```powershell
+git add .
+git commit -m "Connect contact form to Formspree"
+git push
+```
+
+Po wdrożeniu otwórz stronę w trybie incognito albo użyj `Ctrl + F5`.
+
+## Test formularza
+
+1. Wejdź na `https://numeriqmath.pl/`.
+2. Przejdź do sekcji kontaktowej.
+3. Wpisz swój drugi adres e-mail albo dodaj w wiadomości słowo „TEST”.
+4. Wyślij formularz.
+5. Sprawdź adres odbiorczy ustawiony w Formspree oraz folder spam.
+6. Sprawdź również zgłoszenie w panelu Formspree.
+
+## Ważne ustawienie Formspree
+
+W panelu Formspree ustaw ograniczenie domeny na:
+
+```text
+numeriqmath.pl
+```
+
+Nie wpisuj `https://` ani końcowego ukośnika. Pozwoli to ograniczyć zgłoszenia pochodzące z innych stron.
 
 ## Zawartość
 
-- `index.html` — strona główna,
-- `style.css` — pełny wygląd i wersja mobilna,
-- `script.js` — menu, animacje, walidacja i wysyłanie AJAX,
-- `contact.php` — bezpieczny endpoint formularza,
-- `config.example.php` — wzór prywatnej konfiguracji,
-- `polityka-prywatnosci.php` — polityka z danymi pobieranymi z konfiguracji,
-- `.htaccess` — HTTPS, nagłówki bezpieczeństwa i cache,
-- `robots.txt`, `sitemap.xml`, favicony i grafika Open Graph.
+- `index.html` — strona i formularz,
+- `script.js` — wysyłanie AJAX i komunikaty,
+- `style.css` — wygląd,
+- `polityka-prywatnosci.html` — statyczna polityka prywatności,
+- `CNAME` — domena dla GitHub Pages,
+- `.nojekyll` — wyłączenie przetwarzania Jekyll,
+- grafiki, favicony, `robots.txt` i `sitemap.xml`.
 
-## Konfiguracja formularza
+## Pierwszy test
 
-1. Skopiuj `config.example.php` jako `config.php`.
-2. W `config.php` uzupełnij:
-   - adres, na który mają przychodzić wiadomości,
-   - adres nadawcy w domenie `numeriqmath.pl`,
-   - imię i nazwisko administratora danych,
-   - kontaktowy adres e-mail do polityki prywatności.
-3. Nie dodawaj `config.php` do GitHuba. Jest już wpisany w `.gitignore`.
+Formspree może wymagać potwierdzenia lub aktywacji adresu odbiorczego w panelu.
+Jeżeli wiadomość nie przyjdzie, sprawdź:
 
-## Test lokalny z PHP
-
-W folderze strony:
-
-```bash
-cp config.example.php config.php
-```
-
-W `config.php` ustaw:
-
-```php
-'delivery_mode' => 'log',
-```
-
-Następnie:
-
-```bash
-php -S localhost:8000
-```
-
-Otwórz `http://localhost:8000`. Testowe wiadomości trafią do pliku `contact-test.log`.
-Nie otwieraj strony bezpośrednio przez `file://`, bo formularz potrzebuje PHP i sesji.
-
-## Wdrożenie na OVHcloud
-
-1. Utwórz kopię obecnego katalogu `www`.
-2. Wgraj wszystkie pliki z tego projektu do katalogu domeny.
-3. Utwórz na serwerze `config.php` na podstawie wzoru.
-4. Upewnij się, że domena ma aktywny certyfikat HTTPS.
-5. Otwórz stronę w trybie incognito i wyślij test.
-6. Sprawdź skrzynkę odbiorczą i spam.
-
-## GitHub
-
-Przykładowy workflow:
-
-```bash
-git checkout -b feature/contact-form
-git add .
-git commit -m "Add production-ready contact form"
-git push -u origin feature/contact-form
-```
-
-`config.php` tworzysz wyłącznie na serwerze OVH — nie publikuj go w repozytorium.
-
-## Ważne przed publikacją
-
-- wpisz prawdziwy adres odbiorcy w `config.php`,
-- utwórz lub wybierz adres nadawcy w domenie `numeriqmath.pl`,
-- uzupełnij administratora danych,
-- upewnij się, że ceny i zakres oferty są aktualne,
-- publikuj wyłącznie prawdziwe opinie; w tej wersji nie ma fikcyjnych recenzji,
-- wykonaj test formularza na komputerze i telefonie.
-
-## Gdy wiadomości nie dochodzą
-
-- sprawdź spam,
-- sprawdź poprawność `from_email`,
-- użyj adresu nadawcy należącego do domeny,
-- sprawdź logi hostingu,
-- jeśli funkcja `mail()` okaże się niewystarczająca, kolejnym krokiem jest SMTP przez PHPMailer.
+- czy formularz ma status aktywny,
+- czy adres odbiorczy jest zweryfikowany,
+- zakładkę Submissions,
+- folder spam,
+- ustawienie Restrict to Domain.

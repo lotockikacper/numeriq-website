@@ -8,8 +8,6 @@
     const form = document.querySelector("#contact-form");
     const statusBox = document.querySelector("#form-status");
     const submitButton = form?.querySelector("button[type='submit']");
-    const csrfInput = document.querySelector("#csrf-token");
-    const startedAtInput = document.querySelector("#started-at");
 
     const setHeaderState = () => header?.classList.toggle("scrolled", window.scrollY > 12);
     setHeaderState();
@@ -33,18 +31,31 @@
     document.addEventListener("click", (event) => {
         if (!mainNav?.classList.contains("open")) return;
         const target = event.target;
-        if (target instanceof Node && !mainNav.contains(target) && !menuButton?.contains(target)) closeMenu();
+        if (
+            target instanceof Node &&
+            !mainNav.contains(target) &&
+            !menuButton?.contains(target)
+        ) {
+            closeMenu();
+        }
     });
 
     const revealElements = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        const observer = new IntersectionObserver((entries, currentObserver) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("visible");
-                currentObserver.unobserve(entry.target);
-            });
-        }, { threshold: 0.12 });
+    if (
+        "IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+        const observer = new IntersectionObserver(
+            (entries, currentObserver) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add("visible");
+                    currentObserver.unobserve(entry.target);
+                });
+            },
+            { threshold: 0.12 }
+        );
+
         revealElements.forEach((element) => observer.observe(element));
     } else {
         revealElements.forEach((element) => element.classList.add("visible"));
@@ -67,43 +78,46 @@
         if (!submitButton) return;
         submitButton.disabled = loading;
         submitButton.classList.toggle("loading", loading);
-    };
-
-    const fetchToken = async () => {
-        if (!csrfInput || !startedAtInput) return false;
-        try {
-            const response = await fetch("contact.php?action=token", {
-                method: "GET",
-                headers: { "Accept": "application/json" },
-                credentials: "same-origin",
-                cache: "no-store"
-            });
-            const data = await response.json();
-            if (!response.ok || !data.success || !data.csrf_token) throw new Error(data.message || "Nie udało się przygotować formularza.");
-            csrfInput.value = data.csrf_token;
-            startedAtInput.value = String(Date.now());
-            return true;
-        } catch (error) {
-            console.error(error);
-            setStatus("Formularz nie jest jeszcze połączony z serwerem. Po wdrożeniu plików PHP na OVH odśwież stronę.");
-            return false;
-        }
+        submitButton.setAttribute("aria-busy", String(loading));
     };
 
     const validateForm = () => {
         if (!form) return false;
+
         let valid = true;
         form.querySelectorAll("[required]").forEach((field) => {
             let fieldValid = true;
+
             if (field instanceof HTMLInputElement && field.type === "checkbox") {
                 fieldValid = field.checked;
-            } else if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement) {
+            } else if (
+                field instanceof HTMLInputElement ||
+                field instanceof HTMLTextAreaElement ||
+                field instanceof HTMLSelectElement
+            ) {
                 fieldValid = field.value.trim() !== "" && field.checkValidity();
             }
+
             field.classList.toggle("field-invalid", !fieldValid);
             if (!fieldValid) valid = false;
         });
+
         return valid;
+    };
+
+    const getFormspreeError = (data, response) => {
+        if (response.status === 429) {
+            return "Wysłano zbyt wiele wiadomości w krótkim czasie. Odczekaj chwilę i spróbuj ponownie.";
+        }
+
+        if (Array.isArray(data?.errors) && data.errors.length > 0) {
+            return data.errors
+                .map((error) => error?.message)
+                .filter(Boolean)
+                .join(" ");
+        }
+
+        return "Nie udało się wysłać wiadomości. Spróbuj ponownie albo sprawdź połączenie z internetem.";
     };
 
     form?.querySelectorAll("input, textarea, select").forEach((field) => {
@@ -121,36 +135,40 @@
             return;
         }
 
-        if (!csrfInput?.value) {
-            const ready = await fetchToken();
-            if (!ready) return;
-        }
-
         setLoading(true);
+
         try {
             const response = await fetch(form.action, {
                 method: "POST",
                 body: new FormData(form),
-                headers: { "Accept": "application/json" },
-                credentials: "same-origin"
+                headers: {
+                    "Accept": "application/json"
+                }
             });
-            const data = await response.json().catch(() => ({ success: false, message: "Serwer zwrócił nieprawidłową odpowiedź." }));
-            if (!response.ok || !data.success) throw new Error(data.message || "Nie udało się wysłać wiadomości.");
+
+            const data = await response.json().catch(() => ({}));
+
+            if (!response.ok) {
+                throw new Error(getFormspreeError(data, response));
+            }
 
             form.reset();
-            setStatus(data.message || "Wiadomość została wysłana. Dziękuję!", "success");
-            csrfInput.value = data.csrf_token || "";
-            startedAtInput.value = String(Date.now());
+            setStatus(
+                "Wiadomość została wysłana. Dziękuję — odezwę się tak szybko, jak będzie to możliwe!",
+                "success"
+            );
         } catch (error) {
             console.error(error);
-            setStatus(error instanceof Error ? error.message : "Wystąpił błąd. Spróbuj ponownie później.");
-            await fetchToken();
+            setStatus(
+                error instanceof Error
+                    ? error.message
+                    : "Wystąpił błąd podczas wysyłania. Spróbuj ponownie później."
+            );
         } finally {
             setLoading(false);
         }
     });
 
-    fetchToken();
     const year = document.querySelector("#year");
     if (year) year.textContent = String(new Date().getFullYear());
 })();

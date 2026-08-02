@@ -1,0 +1,23 @@
+FORMULARZ NUMERIQ — OSTATNIE KROKI
+
+1. Skopiuj CAŁĄ zawartość tego folderu do repozytorium numeriq-website.
+2. Usuń ze starego repozytorium, jeżeli nadal występują:
+   - contact.php
+   - config.php
+   - config.example.php
+   - polityka-prywatnosci.php
+   - .htaccess
+3. Wykonaj:
+   git add -A
+   git commit -m "Connect contact form to Formspree"
+   git push
+4. Poczekaj 1–3 minuty na wdrożenie GitHub Pages.
+5. Otwórz numeriqmath.pl w trybie incognito.
+6. Wyślij wiadomość testową.
+7. Sprawdź panel Formspree i skrzynkę odbiorczą.
+
+W FORMSPREE:
+Settings / Project Settings → Restrict to Domain → numeriqmath.pl
+
+Endpoint użyty w stronie:
+https://formspree.io/f/xaqrreqn

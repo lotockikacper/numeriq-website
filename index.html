@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260803-formspree-1">
 
     <script type="application/ld+json">
     {
@@ -287,14 +287,14 @@
                     </div>
                 </div>
 
-                <form class="contact-form reveal" id="contact-form" action="contact.php" method="post" novalidate>
+                <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/xaqrreqn" method="post" novalidate>
                     <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
 
-                    <input type="hidden" name="csrf_token" id="csrf-token" value="">
-                    <input type="hidden" name="started_at" id="started-at" value="">
-
+                    <input type="hidden" name="_subject" value="Nowe zapytanie o korepetycje — Numeriq">
                     <div class="honeypot" aria-hidden="true">
-                        <label>Firma <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+                        <label>Nie wypełniaj tego pola
+                            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </label>
                     </div>
 
                     <div class="form-row">
@@ -337,14 +337,14 @@
 
                     <label class="consent-row">
                         <input type="checkbox" name="privacy_ack" value="1" required>
-                        <span>Zapoznałem/am się z <a href="polityka-prywatnosci.php" target="_blank" rel="noopener">polityką prywatności</a>. <span aria-hidden="true">*</span></span>
+                        <span>Zapoznałem/am się z <a href="polityka-prywatnosci.html" target="_blank" rel="noopener">polityką prywatności</a>. <span aria-hidden="true">*</span></span>
                     </label>
 
                     <button class="button button-primary submit-button" type="submit">
                         <span class="button-text">Wyślij wiadomość</span>
                         <span class="button-loader" aria-hidden="true"></span>
                     </button>
-                    <p class="form-footnote">Pola oznaczone * są wymagane. Formularz jest zabezpieczony przed prostym spamem.</p>
+                    <p class="form-footnote">Pola oznaczone * są wymagane. Wiadomość jest przesyłana przez bezpieczny formularz Formspree.</p>
                 </form>
             </div>
         </section>
@@ -360,12 +360,12 @@
                 <a href="#oferta">Oferta</a>
                 <a href="#o-mnie">O mnie</a>
                 <a href="#kontakt">Kontakt</a>
-                <a href="polityka-prywatnosci.php">Polityka prywatności</a>
+                <a href="polityka-prywatnosci.html">Polityka prywatności</a>
             </nav>
             <p class="copyright">© <span id="year">2026</span> Numeriq</p>
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="script.js?v=20260803-formspree-1" defer></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+{
+  "formspree_endpoint_present": true,
+  "old_php_endpoint_removed": true,
+  "csrf_removed": true,
+  "formspree_honeypot_present": true,
+  "privacy_static_linked": true,
+  "privacy_file_exists": true,
+  "cname_present": true,
+  "no_php_files": true
+}
